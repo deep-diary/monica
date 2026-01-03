@@ -21,7 +21,7 @@ class QuickFactManager:
         """
         self.client = client
     
-    def create(self, vault_id: str, contact_id: str, template_id: str, content: str) -> Optional[Dict[str, Any]]:
+    async def create(self, vault_id: str, contact_id: str, template_id: str, content: str) -> Optional[Dict[str, Any]]:
         """
         创建快速事实
         根据 Monica 路由文件：POST /vaults/{vault}/contacts/{contact}/quickFacts/{template}
@@ -47,9 +47,9 @@ class QuickFactManager:
             "__rememberable": True
         }
         
-        return self.client._request('POST', f'/vaults/{vault_id}/contacts/{contact_id}/quickFacts/{template_id}', data=data)
+        return await self.client._request('POST', f'/vaults/{vault_id}/contacts/{contact_id}/quickFacts/{template_id}', data=data)
     
-    def get(self, vault_id: str, contact_id: str, template_id: str) -> Optional[Dict[str, Any]]:
+    async def get(self, vault_id: str, contact_id: str, template_id: str) -> Optional[Dict[str, Any]]:
         """
         获取联系人的快速事实
         根据 Monica 路由文件：GET /vaults/{vault}/contacts/{contact}/quickFacts/{template}
@@ -65,16 +65,17 @@ class QuickFactManager:
         Returns:
             包含快速事实信息的字典，如果解析失败则返回 None
         """
-        result = self.client._request('GET', f'/vaults/{vault_id}/contacts/{contact_id}/quickFacts/{template_id}', parse_html=True)
+        # 先尝试 HTML 解析（静默模式，避免不必要的警告）
+        result = await self.client._request('GET', f'/vaults/{vault_id}/contacts/{contact_id}/quickFacts/{template_id}', parse_html=True, silent=True)
         
         # 如果 HTML 解析失败，尝试直接返回 JSON（如果响应是 JSON）
         if result is None:
             # 尝试不使用 HTML 解析
-            result = self.client._request('GET', f'/vaults/{vault_id}/contacts/{contact_id}/quickFacts/{template_id}', parse_html=False, silent=True)
+            result = await self.client._request('GET', f'/vaults/{vault_id}/contacts/{contact_id}/quickFacts/{template_id}', parse_html=False, silent=True)
         
         return result
     
-    def update(self, vault_id: str, contact_id: str, template_id: str, quick_fact_id: str, content: str) -> Optional[Dict[str, Any]]:
+    async def update(self, vault_id: str, contact_id: str, template_id: str, quick_fact_id: str, content: str) -> Optional[Dict[str, Any]]:
         """
         更新快速事实
         根据 Monica 路由文件：PUT /vaults/{vault}/contacts/{contact}/quickFacts/{template}/{quickFact}
@@ -101,9 +102,9 @@ class QuickFactManager:
             "__rememberable": True
         }
         
-        return self.client._request('PUT', f'/vaults/{vault_id}/contacts/{contact_id}/quickFacts/{template_id}/{quick_fact_id}', data=data)
+        return await self.client._request('PUT', f'/vaults/{vault_id}/contacts/{contact_id}/quickFacts/{template_id}/{quick_fact_id}', data=data)
     
-    def delete(self, vault_id: str, contact_id: str, template_id: str, quick_fact_id: str) -> Optional[Dict[str, Any]]:
+    async def delete(self, vault_id: str, contact_id: str, template_id: str, quick_fact_id: str) -> Optional[Dict[str, Any]]:
         """
         删除快速事实
         根据 Monica 路由文件：DELETE /vaults/{vault}/contacts/{contact}/quickFacts/{template}/{quickFact}
@@ -117,9 +118,9 @@ class QuickFactManager:
         Returns:
             删除结果
         """
-        return self.client._request('DELETE', f'/vaults/{vault_id}/contacts/{contact_id}/quickFacts/{template_id}/{quick_fact_id}')
+        return await self.client._request('DELETE', f'/vaults/{vault_id}/contacts/{contact_id}/quickFacts/{template_id}/{quick_fact_id}')
     
-    def toggle(self, vault_id: str, contact_id: str) -> Optional[Dict[str, Any]]:
+    async def toggle(self, vault_id: str, contact_id: str) -> Optional[Dict[str, Any]]:
         """
         切换快速事实的显示状态
         根据 Monica 路由文件：PUT /vaults/{vault}/contacts/{contact}/quickFacts/toggle
@@ -131,5 +132,5 @@ class QuickFactManager:
         Returns:
             切换结果
         """
-        return self.client._request('PUT', f'/vaults/{vault_id}/contacts/{contact_id}/quickFacts/toggle')
+        return await self.client._request('PUT', f'/vaults/{vault_id}/contacts/{contact_id}/quickFacts/toggle')
 

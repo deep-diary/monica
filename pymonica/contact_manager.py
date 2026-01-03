@@ -21,7 +21,7 @@ class ContactManager:
         """
         self.client = client
     
-    def list(self, vault_id: str, limit: int = 25, page: int = 1) -> Optional[Dict[str, Any]]:
+    async def list(self, vault_id: str, limit: int = 25, page: int = 1) -> Optional[Dict[str, Any]]:
         """
         获取联系人列表
         根据 Monica 路由文件：GET /vaults/{vault}/contacts
@@ -41,9 +41,9 @@ class ContactManager:
             params['page'] = page
         
         # 使用 Web 路由，需要解析 HTML
-        return self.client._request('GET', f'/vaults/{vault_id}/contacts', params=params, parse_html=True)
+        return await self.client._request('GET', f'/vaults/{vault_id}/contacts', params=params, parse_html=True)
     
-    def get(self, vault_id: str, contact_id: str) -> Optional[Dict[str, Any]]:
+    async def get(self, vault_id: str, contact_id: str) -> Optional[Dict[str, Any]]:
         """
         获取单个联系人详情
         根据 Monica 路由文件：GET /vaults/{vault}/contacts/{contact}
@@ -57,9 +57,9 @@ class ContactManager:
             包含联系人详情的字典
         """
         # 使用 Web 路由，需要解析 HTML
-        return self.client._request('GET', f'/vaults/{vault_id}/contacts/{contact_id}', parse_html=True)
+        return await self.client._request('GET', f'/vaults/{vault_id}/contacts/{contact_id}', parse_html=True)
     
-    def create(self, vault_id: str, first_name: str, last_name: str, 
+    async def create(self, vault_id: str, first_name: str, last_name: str, 
                middle_name: str = "", nickname: str = "", prefix: str = "", 
                suffix: str = "", maiden_name: str = "", gender_id: str = "", 
                pronoun_id: str = "", template_id: str = "") -> Optional[Dict[str, Any]]:
@@ -97,9 +97,9 @@ class ContactManager:
             "errors": []
         }
         
-        return self.client._request('POST', f'/vaults/{vault_id}/contacts', data=data)
+        return await self.client._request('POST', f'/vaults/{vault_id}/contacts', data=data)
     
-    def update(self, vault_id: str, contact_id: str, **kwargs) -> Optional[Dict[str, Any]]:
+    async def update(self, vault_id: str, contact_id: str, **kwargs) -> Optional[Dict[str, Any]]:
         """
         更新联系人信息
         根据 Monica 路由文件：POST /vaults/{vault}/contacts/{contact}
@@ -123,9 +123,9 @@ class ContactManager:
         Returns:
             更新后的联系人信息
         """
-        return self.client._request('POST', f'/vaults/{vault_id}/contacts/{contact_id}', data=kwargs)
+        return await self.client._request('POST', f'/vaults/{vault_id}/contacts/{contact_id}', data=kwargs)
     
-    def delete(self, vault_id: str, contact_id: str) -> Optional[Dict[str, Any]]:
+    async def delete(self, vault_id: str, contact_id: str) -> Optional[Dict[str, Any]]:
         """
         删除联系人
         根据 Monica 路由文件：DELETE /vaults/{vault}/contacts/{contact}
@@ -137,9 +137,9 @@ class ContactManager:
         Returns:
             删除结果
         """
-        return self.client._request('DELETE', f'/vaults/{vault_id}/contacts/{contact_id}')
+        return await self.client._request('DELETE', f'/vaults/{vault_id}/contacts/{contact_id}')
     
-    def search(self, vault_id: str, query: str, page: int = 1) -> Optional[Dict[str, Any]]:
+    async def search(self, vault_id: str, query: str, page: int = 1) -> Optional[Dict[str, Any]]:
         """
         搜索联系人
         根据 Monica 路由文件：POST /vaults/{vault}/search/user/contacts
@@ -172,7 +172,7 @@ class ContactManager:
         }
         
         # 使用 JSON 格式（根据官方示例）
-        result = self.client._request('POST', f'/vaults/{vault_id}/search/user/contacts', data=data)
+        result = await self.client._request('POST', f'/vaults/{vault_id}/search/user/contacts', data=data)
         
         # 如果搜索失败，返回 None 并提示用户
         if result is None:
