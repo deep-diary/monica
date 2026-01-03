@@ -1,0 +1,3714 @@
+{
+    "component": "Vault/Contact/Index",
+    "props": {
+        "errors": {},
+        "jetstream": {
+            "canCreateTeams": false,
+            "canManageTwoFactorAuthentication": true,
+            "canUpdatePassword": true,
+            "canUpdateProfileInformation": true,
+            "hasEmailVerification": true,
+            "flash": [],
+            "hasAccountDeletionFeatures": false,
+            "hasApiFeatures": true,
+            "hasTeamFeatures": false,
+            "hasTermsAndPrivacyPolicyFeature": true,
+            "managesProfilePhotos": false
+        },
+        "auth": {
+            "user": {
+                "first_name": "维冬",
+                "last_name": "葛",
+                "email": "deep-diary@qq.com",
+                "timezone": "UTC",
+                "is_account_administrator": true,
+                "help_shown": true,
+                "locale": "en",
+                "name": "维冬 葛",
+                "locale_ietf": "en",
+                "two_factor_enabled": false
+            }
+        },
+        "errorBags": [],
+        "help_links": {
+            "vault_create": "vaults/introduction",
+            "last_updated_contacts": "vaults/dashboard#last-updated-contacts",
+            "settings_preferences_help": "user-and-account-settings/manage-preferences#help-display",
+            "settings_preferences_language": "user-and-account-settings/manage-preferences#language",
+            "settings_preferences_contact_names": "user-and-account-settings/manage-preferences#customize-contact-names",
+            "settings_preferences_date": "user-and-account-settings/manage-preferences#date-format",
+            "settings_preferences_numerical_format": "user-and-account-settings/manage-preferences#numerical-format",
+            "settings_preferences_timezone": "user-and-account-settings/manage-preferences#timezone",
+            "settings_preferences_maps": "user-and-account-settings/manage-preferences#timezone",
+            "settings_account_deletion": "user-and-account-settings/account-deletion"
+        },
+        "help_url": "https://docs.monicahq.com/",
+        "footer": "Version v5.0.0-beta.5 — commit <a rel=\"noopener noreferrer\" target=\"_blank\" class=\"underline text-xs dark:text-gray-100 hover:text-gray-900 hover:dark:text-gray-200\" href=\"https://github.com/monicahq/monica/commit/0c9a7dd1405f71fc46ea97f87b6c4ae67a423df3\">0c9a7dd</a>.</p>\n",
+        "ziggy": {
+            "url": "http://localhost:8080",
+            "port": 8080,
+            "defaults": [],
+            "routes": {
+                "webauthn.auth.options": {
+                    "uri": "webauthn/auth/options",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "webauthn.auth": {
+                    "uri": "webauthn/auth",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "webauthn.store.options": {
+                    "uri": "webauthn/keys/options",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "webauthn.store": {
+                    "uri": "webauthn/keys",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "webauthn.destroy": {
+                    "uri": "webauthn/keys/{id}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "id"
+                    ]
+                },
+                "webauthn.update": {
+                    "uri": "webauthn/keys/{id}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "id"
+                    ]
+                },
+                "scribe": {
+                    "uri": "docs",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "scribe.postman": {
+                    "uri": "docs.postman",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "scribe.openapi": {
+                    "uri": "docs.openapi",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "login": {
+                    "uri": "login",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "login.store": {
+                    "uri": "login",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "logout": {
+                    "uri": "logout",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "password.request": {
+                    "uri": "forgot-password",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "password.reset": {
+                    "uri": "reset-password/{token}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "token"
+                    ]
+                },
+                "password.email": {
+                    "uri": "forgot-password",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "password.update": {
+                    "uri": "reset-password",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "register": {
+                    "uri": "register",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "register.store": {
+                    "uri": "register",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "verification.notice": {
+                    "uri": "email/verify",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "verification.verify": {
+                    "uri": "email/verify/{id}/{hash}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "id",
+                        "hash"
+                    ]
+                },
+                "verification.send": {
+                    "uri": "email/verification-notification",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "user-profile-information.update": {
+                    "uri": "user/profile-information",
+                    "methods": [
+                        "PUT"
+                    ]
+                },
+                "user-password.update": {
+                    "uri": "user/password",
+                    "methods": [
+                        "PUT"
+                    ]
+                },
+                "password.confirm": {
+                    "uri": "user/confirm-password",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "password.confirmation": {
+                    "uri": "user/confirmed-password-status",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "password.confirm.store": {
+                    "uri": "user/confirm-password",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "two-factor.login": {
+                    "uri": "two-factor-challenge",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "two-factor.login.store": {
+                    "uri": "two-factor-challenge",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "two-factor.enable": {
+                    "uri": "user/two-factor-authentication",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "two-factor.confirm": {
+                    "uri": "user/confirmed-two-factor-authentication",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "two-factor.disable": {
+                    "uri": "user/two-factor-authentication",
+                    "methods": [
+                        "DELETE"
+                    ]
+                },
+                "two-factor.qr-code": {
+                    "uri": "user/two-factor-qr-code",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "two-factor.secret-key": {
+                    "uri": "user/two-factor-secret-key",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "two-factor.recovery-codes": {
+                    "uri": "user/two-factor-recovery-codes",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "terms.show": {
+                    "uri": "terms-of-service",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "policy.show": {
+                    "uri": "privacy-policy",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "profile.show": {
+                    "uri": "user/profile",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "other-browser-sessions.destroy": {
+                    "uri": "user/other-browser-sessions",
+                    "methods": [
+                        "DELETE"
+                    ]
+                },
+                "current-user-photo.destroy": {
+                    "uri": "user/profile-photo",
+                    "methods": [
+                        "DELETE"
+                    ]
+                },
+                "api-tokens.index": {
+                    "uri": "user/api-tokens",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "api-tokens.store": {
+                    "uri": "user/api-tokens",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "api-tokens.update": {
+                    "uri": "user/api-tokens/{token}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "token"
+                    ]
+                },
+                "api-tokens.destroy": {
+                    "uri": "user/api-tokens/{token}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "token"
+                    ]
+                },
+                "sanctum.csrf-cookie": {
+                    "uri": "sanctum/csrf-cookie",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "sabre.dav": {
+                    "uri": "dav/{path?}",
+                    "methods": [
+                        "GET",
+                        "HEAD",
+                        "POST",
+                        "PUT",
+                        "PATCH",
+                        "DELETE",
+                        "OPTIONS",
+                        "GET",
+                        "HEAD",
+                        "POST",
+                        "PUT",
+                        "PATCH",
+                        "DELETE",
+                        "PROPFIND",
+                        "PROPPATCH",
+                        "MKCOL",
+                        "COPY",
+                        "MOVE",
+                        "LOCK",
+                        "UNLOCK",
+                        "OPTIONS",
+                        "REPORT",
+                        "GET",
+                        "HEAD",
+                        "POST",
+                        "PUT",
+                        "PATCH",
+                        "DELETE",
+                        "PROPFIND",
+                        "PROPPATCH",
+                        "MKCOL",
+                        "COPY",
+                        "MOVE",
+                        "LOCK",
+                        "UNLOCK",
+                        "OPTIONS",
+                        "REPORT"
+                    ],
+                    "wheres": {
+                        "path": "(.)*"
+                    },
+                    "parameters": [
+                        "path"
+                    ]
+                },
+                "api.": {
+                    "uri": "api/user",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "api.users.index": {
+                    "uri": "api/users",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "api.users.show": {
+                    "uri": "api/users/{user}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "user"
+                    ]
+                },
+                "api.vaults.index": {
+                    "uri": "api/vaults",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "api.vaults.store": {
+                    "uri": "api/vaults",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "api.vaults.show": {
+                    "uri": "api/vaults/{vault}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "api.vaults.update": {
+                    "uri": "api/vaults/{vault}",
+                    "methods": [
+                        "PUT",
+                        "PATCH"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "api.vaults.destroy": {
+                    "uri": "api/vaults/{vault}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "home": {
+                    "uri": "/",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "login.provider": {
+                    "uri": "auth/{driver}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "driver"
+                    ]
+                },
+                "invitation.show": {
+                    "uri": "invitation/{code}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "code"
+                    ]
+                },
+                "invitation.store": {
+                    "uri": "invitation",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "vault.index": {
+                    "uri": "vaults",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "vault.create": {
+                    "uri": "vaults/create",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "vault.store": {
+                    "uri": "vaults",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "vault.show": {
+                    "uri": "vaults/{vault}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ],
+                    "bindings": {
+                        "vault": "id"
+                    }
+                },
+                "vault.edit": {
+                    "uri": "vaults/{vault}/edit",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ],
+                    "bindings": {
+                        "vault": "id"
+                    }
+                },
+                "vault.update": {
+                    "uri": "vaults/{vault}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ],
+                    "bindings": {
+                        "vault": "id"
+                    }
+                },
+                "vault.destroy": {
+                    "uri": "vaults/{vault}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ],
+                    "bindings": {
+                        "vault": "id"
+                    }
+                },
+                "vault.default_tab.update": {
+                    "uri": "vaults/{vault}/defaultTab",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.calendar.index": {
+                    "uri": "vaults/{vault}/calendar",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ],
+                    "bindings": {
+                        "vault": "id"
+                    }
+                },
+                "vault.calendar.month": {
+                    "uri": "vaults/{vault}/calendar/years/{year}/months/{month}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "year",
+                        "month"
+                    ],
+                    "bindings": {
+                        "vault": "id"
+                    }
+                },
+                "vault.calendar.day": {
+                    "uri": "vaults/{vault}/calendar/years/{year}/months/{month}/days/{day}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "year",
+                        "month",
+                        "day"
+                    ],
+                    "bindings": {
+                        "vault": "id"
+                    }
+                },
+                "vault.reminder.index": {
+                    "uri": "vaults/{vault}/reminders",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.feed.show": {
+                    "uri": "vaults/{vault}/feed",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.tasks.index": {
+                    "uri": "vaults/{vault}/tasks",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.reports.index": {
+                    "uri": "vaults/{vault}/reports",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.reports.addresses.index": {
+                    "uri": "vaults/{vault}/reports/addresses",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.reports.addresses.cities.show": {
+                    "uri": "vaults/{vault}/reports/addresses/city/{city}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "city"
+                    ]
+                },
+                "vault.reports.addresses.countries.show": {
+                    "uri": "vaults/{vault}/reports/addresses/country/{country}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "country"
+                    ]
+                },
+                "vault.reports.mood_tracking_events.index": {
+                    "uri": "vaults/{vault}/reports/moodTrackingEvents",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.reports.important_dates.index": {
+                    "uri": "vaults/{vault}/reports/importantDates",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.life_metrics.store": {
+                    "uri": "vaults/{vault}/lifeMetrics",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.life_metrics.update": {
+                    "uri": "vaults/{vault}/lifeMetrics/{metric}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "metric"
+                    ]
+                },
+                "vault.life_metrics.contact.store": {
+                    "uri": "vaults/{vault}/lifeMetrics/{metric}",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "metric"
+                    ]
+                },
+                "vault.life_metrics.destroy": {
+                    "uri": "vaults/{vault}/lifeMetrics/{metric}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "metric"
+                    ]
+                },
+                "contact.index": {
+                    "uri": "vaults/{vault}/contacts",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ],
+                    "bindings": {
+                        "vault": "id"
+                    }
+                },
+                "contact.label.index": {
+                    "uri": "vaults/{vault}/contacts/labels/{label}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "label"
+                    ]
+                },
+                "contact.sort.update": {
+                    "uri": "vaults/{vault}/contacts/sort",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ],
+                    "bindings": {
+                        "vault": "id"
+                    }
+                },
+                "contact.create": {
+                    "uri": "vaults/{vault}/contacts/create",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ],
+                    "bindings": {
+                        "vault": "id"
+                    }
+                },
+                "contact.store": {
+                    "uri": "vaults/{vault}/contacts",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "contact.show": {
+                    "uri": "vaults/{vault}/contacts/{contact}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.edit": {
+                    "uri": "vaults/{vault}/contacts/{contact}/edit",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.vcard.download": {
+                    "uri": "vaults/{vault}/contacts/{contact}/vcard",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ],
+                    "bindings": {
+                        "vault": "id",
+                        "contact": "id"
+                    }
+                },
+                "contact.quick_fact.show": {
+                    "uri": "vaults/{vault}/contacts/{contact}/quickFacts/{template}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "template"
+                    ]
+                },
+                "contact.quick_fact.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/quickFacts/{template}",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "template"
+                    ]
+                },
+                "contact.quick_fact.toggle": {
+                    "uri": "vaults/{vault}/contacts/{contact}/quickFacts/toggle",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.quick_fact.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/quickFacts/{template}/{quickFact}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "template",
+                        "quickFact"
+                    ]
+                },
+                "contact.quick_fact.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}/quickFacts/{template}/{quickFact}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "template",
+                        "quickFact"
+                    ]
+                },
+                "contact.archive.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/toggle",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.favorite.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/toggle-favorite",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.move.show": {
+                    "uri": "vaults/{vault}/contacts/{contact}/move",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.move.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/move",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.blank": {
+                    "uri": "vaults/{vault}/contacts/{contact}/update-template",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.template.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/template",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.page.show": {
+                    "uri": "vaults/{vault}/contacts/{contact}/tabs/{slug}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "slug"
+                    ]
+                },
+                "contact.avatar.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/avatar",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.avatar.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}/avatar",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.feed.show": {
+                    "uri": "vaults/{vault}/contacts/{contact}/feed",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.date.index": {
+                    "uri": "vaults/{vault}/contacts/{contact}/dates",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.date.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/dates",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.date.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/dates/{date}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "date"
+                    ]
+                },
+                "contact.date.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}/dates/{date}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "date"
+                    ]
+                },
+                "contact.note.index": {
+                    "uri": "vaults/{vault}/contacts/{contact}/notes",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.note.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/notes",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.note.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/notes/{note}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "note"
+                    ]
+                },
+                "contact.note.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}/notes/{note}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "note"
+                    ]
+                },
+                "contact.goal.show": {
+                    "uri": "vaults/{vault}/contacts/{contact}/goals/{goal}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "goal"
+                    ]
+                },
+                "contact.goal.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/goals",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.goal.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/goals/{goal}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "goal"
+                    ]
+                },
+                "contact.goal.streak.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/goals/{goal}/streaks",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "goal"
+                    ]
+                },
+                "contact.goal.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}/goals/{goal}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "goal"
+                    ]
+                },
+                "contact.label.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/labels",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.label.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/labels/{label}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "label"
+                    ]
+                },
+                "contact.label.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}/labels/{label}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "label"
+                    ]
+                },
+                "contact.reminder.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/reminders",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.reminder.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/reminders/{reminder}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "reminder"
+                    ]
+                },
+                "contact.reminder.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}/reminders/{reminder}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "reminder"
+                    ]
+                },
+                "contact.address.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/addresses",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.address.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/addresses/{address}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "address"
+                    ]
+                },
+                "contact.address.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}/addresses/{address}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "address"
+                    ]
+                },
+                "contact.address.image.show": {
+                    "uri": "vaults/{vault}/contacts/{contact}/addresses/{address}/image/{width}x{height}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "wheres": {
+                        "width": ".*",
+                        "height": ".*"
+                    },
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "address",
+                        "width",
+                        "height"
+                    ]
+                },
+                "contact.contact_information.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/contactInformation",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.contact_information.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/contactInformation/{info}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "info"
+                    ]
+                },
+                "contact.contact_information.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}/contactInformation/{info}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "info"
+                    ]
+                },
+                "contact.loan.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/loans",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.loan.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/loans/{loan}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "loan"
+                    ]
+                },
+                "contact.loan.toggle": {
+                    "uri": "vaults/{vault}/contacts/{contact}/loans/{loan}/toggle",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "loan"
+                    ]
+                },
+                "contact.loan.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}/loans/{loan}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "loan"
+                    ]
+                },
+                "contact.companies.list.index": {
+                    "uri": "vaults/{vault}/contacts/{contact}/companies/list",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.job_information.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/jobInformation",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.job_information.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}/jobInformation",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.religion.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/religion",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.relationships.create": {
+                    "uri": "vaults/{vault}/contacts/{contact}/relationships/create",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.relationships.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/relationships",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.relationships.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/relationships/{relationship}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "relationship"
+                    ]
+                },
+                "contact.pet.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/pets",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.pet.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/pets/{pet}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "pet"
+                    ]
+                },
+                "contact.pet.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}/pets/{pet}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "pet"
+                    ]
+                },
+                "contact.document.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/documents",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.document.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}/documents/{document}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "document"
+                    ]
+                },
+                "contact.photo.index": {
+                    "uri": "vaults/{vault}/contacts/{contact}/photos",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.photo.show": {
+                    "uri": "vaults/{vault}/contacts/{contact}/photos/{photo}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "photo"
+                    ]
+                },
+                "contact.photo.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/photos",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.photo.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}/photos/{photo}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "photo"
+                    ]
+                },
+                "contact.task.index": {
+                    "uri": "vaults/{vault}/contacts/{contact}/tasks/completed",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.task.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/tasks",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.task.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/tasks/{task}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "task"
+                    ]
+                },
+                "contact.task.toggle": {
+                    "uri": "vaults/{vault}/contacts/{contact}/tasks/{task}/toggle",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "task"
+                    ]
+                },
+                "contact.task.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}/tasks/{task}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "task"
+                    ]
+                },
+                "contact.call.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/calls",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.call.update": {
+                    "uri": "vaults/{vault}/contacts/{contact}/calls/{call}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "call"
+                    ]
+                },
+                "contact.call.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}/calls/{call}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "call"
+                    ]
+                },
+                "contact.group.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/groups",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.group.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}/groups/{group}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "group"
+                    ]
+                },
+                "contact.timeline_event.index": {
+                    "uri": "vaults/{vault}/contacts/{contact}/timelineEvents",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.timeline_event.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/timelineEvents",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "contact.timeline_event.toggle": {
+                    "uri": "vaults/{vault}/contacts/{contact}/timelineEvents/{timelineEvent}/toggle",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "timelineEvent"
+                    ]
+                },
+                "contact.life_event.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/timelineEvents/{timelineEvent}/lifeEvents",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "timelineEvent"
+                    ]
+                },
+                "contact.timeline_event.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}/timelineEvents/{timelineEvent}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "timelineEvent"
+                    ]
+                },
+                "contact.life_event.edit": {
+                    "uri": "vaults/{vault}/contacts/{contact}/timelineEvents/{timelineEvent}/lifeEvents/{lifeEvent}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "timelineEvent",
+                        "lifeEvent"
+                    ]
+                },
+                "contact.life_event.toggle": {
+                    "uri": "vaults/{vault}/contacts/{contact}/timelineEvents/{timelineEvent}/lifeEvents/{lifeEvent}/toggle",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "timelineEvent",
+                        "lifeEvent"
+                    ]
+                },
+                "contact.life_event.destroy": {
+                    "uri": "vaults/{vault}/contacts/{contact}/timelineEvents/{timelineEvent}/lifeEvents/{lifeEvent}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact",
+                        "timelineEvent",
+                        "lifeEvent"
+                    ]
+                },
+                "contact.mood_tracking_event.store": {
+                    "uri": "vaults/{vault}/contacts/{contact}/moodTrackingEvents",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "contact"
+                    ]
+                },
+                "group.index": {
+                    "uri": "vaults/{vault}/groups",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "group.show": {
+                    "uri": "vaults/{vault}/groups/{group}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "group"
+                    ]
+                },
+                "group.edit": {
+                    "uri": "vaults/{vault}/groups/{group}/edit",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "group"
+                    ]
+                },
+                "group.update": {
+                    "uri": "vaults/{vault}/groups/{group}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "group"
+                    ]
+                },
+                "group.destroy": {
+                    "uri": "vaults/{vault}/groups/{group}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "group"
+                    ]
+                },
+                "journal.index": {
+                    "uri": "vaults/{vault}/journals",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ],
+                    "bindings": {
+                        "vault": "id"
+                    }
+                },
+                "journal.create": {
+                    "uri": "vaults/{vault}/journals/create",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ],
+                    "bindings": {
+                        "vault": "id"
+                    }
+                },
+                "journal.store": {
+                    "uri": "vaults/{vault}/journals",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "journal.show": {
+                    "uri": "vaults/{vault}/journals/{journal}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal"
+                    ]
+                },
+                "journal.photo.index": {
+                    "uri": "vaults/{vault}/journals/{journal}/photos",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal"
+                    ]
+                },
+                "journal.year": {
+                    "uri": "vaults/{vault}/journals/{journal}/years/{year}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "year"
+                    ]
+                },
+                "journal.edit": {
+                    "uri": "vaults/{vault}/journals/{journal}/edit",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal"
+                    ]
+                },
+                "journal.update": {
+                    "uri": "vaults/{vault}/journals/{journal}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal"
+                    ]
+                },
+                "journal.destroy": {
+                    "uri": "vaults/{vault}/journals/{journal}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal"
+                    ]
+                },
+                "post.create": {
+                    "uri": "vaults/{vault}/journals/{journal}/posts/create",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal"
+                    ]
+                },
+                "post.store": {
+                    "uri": "vaults/{vault}/journals/{journal}/posts/template/{template}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "template"
+                    ]
+                },
+                "post.show": {
+                    "uri": "vaults/{vault}/journals/{journal}/posts/{post}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "post"
+                    ]
+                },
+                "post.edit": {
+                    "uri": "vaults/{vault}/journals/{journal}/posts/{post}/edit",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "post"
+                    ]
+                },
+                "post.update": {
+                    "uri": "vaults/{vault}/journals/{journal}/posts/{post}/update",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "post"
+                    ]
+                },
+                "post.photos.store": {
+                    "uri": "vaults/{vault}/journals/{journal}/posts/{post}/photos",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "post"
+                    ]
+                },
+                "post.photos.destroy": {
+                    "uri": "vaults/{vault}/journals/{journal}/posts/{post}/photos/{photo}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "post",
+                        "photo"
+                    ]
+                },
+                "post.destroy": {
+                    "uri": "vaults/{vault}/journals/{journal}/posts/{post}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "post"
+                    ]
+                },
+                "post.tag.store": {
+                    "uri": "vaults/{vault}/journals/{journal}/posts/{post}/tags",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "post"
+                    ]
+                },
+                "post.tag.update": {
+                    "uri": "vaults/{vault}/journals/{journal}/posts/{post}/tags/{tag}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "post",
+                        "tag"
+                    ]
+                },
+                "post.tag.destroy": {
+                    "uri": "vaults/{vault}/journals/{journal}/posts/{post}/tags/{tag}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "post",
+                        "tag"
+                    ]
+                },
+                "post.slices.update": {
+                    "uri": "vaults/{vault}/journals/{journal}/posts/{post}/slices",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "post"
+                    ]
+                },
+                "post.slices.destroy": {
+                    "uri": "vaults/{vault}/journals/{journal}/posts/{post}/slices",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "post"
+                    ]
+                },
+                "post.metrics.store": {
+                    "uri": "vaults/{vault}/journals/{journal}/posts/{post}/metrics",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "post"
+                    ]
+                },
+                "post.metrics.destroy": {
+                    "uri": "vaults/{vault}/journals/{journal}/posts/{post}/metrics/{metric}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "post",
+                        "metric"
+                    ]
+                },
+                "slices.index": {
+                    "uri": "vaults/{vault}/journals/{journal}/slices",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal"
+                    ]
+                },
+                "slices.store": {
+                    "uri": "vaults/{vault}/journals/{journal}/slices",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal"
+                    ]
+                },
+                "slices.show": {
+                    "uri": "vaults/{vault}/journals/{journal}/slices/{slice}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "slice"
+                    ]
+                },
+                "slices.edit": {
+                    "uri": "vaults/{vault}/journals/{journal}/slices/{slice}/edit",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "slice"
+                    ]
+                },
+                "slices.update": {
+                    "uri": "vaults/{vault}/journals/{journal}/slices/{slice}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "slice"
+                    ]
+                },
+                "slices.cover.update": {
+                    "uri": "vaults/{vault}/journals/{journal}/slices/{slice}/cover",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "slice"
+                    ]
+                },
+                "slices.cover.destroy": {
+                    "uri": "vaults/{vault}/journals/{journal}/slices/{slice}/cover",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "slice"
+                    ]
+                },
+                "slices.destroy": {
+                    "uri": "vaults/{vault}/journals/{journal}/slices/{slice}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "slice"
+                    ]
+                },
+                "journal_metrics.index": {
+                    "uri": "vaults/{vault}/journals/{journal}/metrics",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal"
+                    ]
+                },
+                "journal_metrics.store": {
+                    "uri": "vaults/{vault}/journals/{journal}/metrics",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal"
+                    ]
+                },
+                "journal_metrics.destroy": {
+                    "uri": "vaults/{vault}/journals/{journal}/metrics/{metric}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "journal",
+                        "metric"
+                    ]
+                },
+                "vault.files.index": {
+                    "uri": "vaults/{vault}/files",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.files.photos": {
+                    "uri": "vaults/{vault}/files/photos",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.files.documents": {
+                    "uri": "vaults/{vault}/files/documents",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.files.avatars": {
+                    "uri": "vaults/{vault}/files/avatars",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.files.destroy": {
+                    "uri": "vaults/{vault}/files/{file}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "file"
+                    ]
+                },
+                "vault.companies.index": {
+                    "uri": "vaults/{vault}/companies",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.companies.show": {
+                    "uri": "vaults/{vault}/companies/{company}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "company"
+                    ]
+                },
+                "vault.settings.index": {
+                    "uri": "vaults/{vault}/settings",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.settings.update": {
+                    "uri": "vaults/{vault}/settings",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.settings.template.update": {
+                    "uri": "vaults/{vault}/settings/template",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.settings.user.store": {
+                    "uri": "vaults/{vault}/settings/users",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.settings.user.update": {
+                    "uri": "vaults/{vault}/settings/users/{user}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "user"
+                    ]
+                },
+                "vault.settings.user.destroy": {
+                    "uri": "vaults/{vault}/settings/users/{user}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "user"
+                    ]
+                },
+                "vault.settings.label.index": {
+                    "uri": "vaults/{vault}/settings/labels",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.settings.label.store": {
+                    "uri": "vaults/{vault}/settings/labels",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.settings.label.update": {
+                    "uri": "vaults/{vault}/settings/labels/{label}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "label"
+                    ]
+                },
+                "vault.settings.label.destroy": {
+                    "uri": "vaults/{vault}/settings/labels/{label}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "label"
+                    ]
+                },
+                "vault.settings.tag.index": {
+                    "uri": "vaults/{vault}/settings/tags",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.settings.tag.store": {
+                    "uri": "vaults/{vault}/settings/tags",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.settings.tag.update": {
+                    "uri": "vaults/{vault}/settings/tags/{tag}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "tag"
+                    ]
+                },
+                "vault.settings.tag.destroy": {
+                    "uri": "vaults/{vault}/settings/tags/{tag}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "tag"
+                    ]
+                },
+                "vault.settings.important_date_type.store": {
+                    "uri": "vaults/{vault}/settings/contactImportantDateTypes",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.settings.important_date_type.update": {
+                    "uri": "vaults/{vault}/settings/contactImportantDateTypes/{type}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "type"
+                    ]
+                },
+                "vault.settings.important_date_type.destroy": {
+                    "uri": "vaults/{vault}/settings/contactImportantDateTypes/{type}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "type"
+                    ]
+                },
+                "vault.settings.tab.update": {
+                    "uri": "vaults/{vault}/settings/visibility",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.settings.mood_tracking_parameter.store": {
+                    "uri": "vaults/{vault}/settings/moodTrackingParameters",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.settings.mood_tracking_parameter.update": {
+                    "uri": "vaults/{vault}/settings/moodTrackingParameters/{parameter}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "parameter"
+                    ]
+                },
+                "vault.settings.mood_tracking_parameter.order.update": {
+                    "uri": "vaults/{vault}/settings/moodTrackingParameters/{parameter}/order",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "parameter"
+                    ]
+                },
+                "vault.settings.mood_tracking_parameter.destroy": {
+                    "uri": "vaults/{vault}/settings/moodTrackingParameters/{parameter}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "parameter"
+                    ]
+                },
+                "vault.settings.life_event_categories.store": {
+                    "uri": "vaults/{vault}/settings/lifeEventCategories",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.settings.life_event_categories.update": {
+                    "uri": "vaults/{vault}/settings/lifeEventCategories/{lifeEventCategory}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "lifeEventCategory"
+                    ]
+                },
+                "vault.settings.life_event_categories.destroy": {
+                    "uri": "vaults/{vault}/settings/lifeEventCategories/{lifeEventCategory}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "lifeEventCategory"
+                    ]
+                },
+                "vault.settings.life_event_categories.order.update": {
+                    "uri": "vaults/{vault}/settings/lifeEventCategories/{lifeEventCategory}/order",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "lifeEventCategory"
+                    ]
+                },
+                "vault.settings.life_event_types.store": {
+                    "uri": "vaults/{vault}/settings/lifeEventCategories/{lifeEventCategory}/lifeEventTypes",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "lifeEventCategory"
+                    ]
+                },
+                "vault.settings.life_event_types.update": {
+                    "uri": "vaults/{vault}/settings/lifeEventCategories/{lifeEventCategory}/lifeEventTypes/{lifeEventType}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "lifeEventCategory",
+                        "lifeEventType"
+                    ]
+                },
+                "vault.settings.life_event_types.destroy": {
+                    "uri": "vaults/{vault}/settings/lifeEventCategories/{lifeEventCategory}/lifeEventTypes/{lifeEventType}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "lifeEventCategory",
+                        "lifeEventType"
+                    ]
+                },
+                "vault.settings.life_event_types.order.update": {
+                    "uri": "vaults/{vault}/settings/lifeEventCategories/{lifeEventCategory}/lifeEventTypes/{lifeEventType}/order",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "lifeEventCategory",
+                        "lifeEventType"
+                    ]
+                },
+                "vault.settings.quick_fact_templates.store": {
+                    "uri": "vaults/{vault}/settings/quickFactTemplates",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.settings.quick_fact_templates.update": {
+                    "uri": "vaults/{vault}/settings/quickFactTemplates/{template}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "template"
+                    ]
+                },
+                "vault.settings.quick_fact_templates.order.update": {
+                    "uri": "vaults/{vault}/settings/quickFactTemplates/{template}/order",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "template"
+                    ]
+                },
+                "vault.settings.quick_fact_templates.destroy": {
+                    "uri": "vaults/{vault}/settings/quickFactTemplates/{template}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "vault",
+                        "template"
+                    ]
+                },
+                "vault.search.index": {
+                    "uri": "vaults/{vault}/search",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.search.show": {
+                    "uri": "vaults/{vault}/search",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.user.search.mostconsulted": {
+                    "uri": "vaults/{vault}/search/user/contact/mostConsulted",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "vault.user.search.index": {
+                    "uri": "vaults/{vault}/search/user/contacts",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "vault"
+                    ]
+                },
+                "settings.index": {
+                    "uri": "settings",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.preferences.index": {
+                    "uri": "settings/preferences",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.preferences.name.store": {
+                    "uri": "settings/preferences/name",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.preferences.date.store": {
+                    "uri": "settings/preferences/date",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.preferences.timezone.store": {
+                    "uri": "settings/preferences/timezone",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.preferences.number.store": {
+                    "uri": "settings/preferences/number",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.preferences.distance.store": {
+                    "uri": "settings/preferences/distance",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.preferences.maps.store": {
+                    "uri": "settings/preferences/maps",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.preferences.locale.store": {
+                    "uri": "settings/preferences/locale",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.preferences.help.store": {
+                    "uri": "settings/preferences/help",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.notifications.index": {
+                    "uri": "settings/notifications",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.notifications.store": {
+                    "uri": "settings/notifications",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.notifications.telegram.store": {
+                    "uri": "settings/notifications/telegram",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.notifications.verification.store": {
+                    "uri": "settings/notifications/{notification}/verify/{uuid}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "notification",
+                        "uuid"
+                    ]
+                },
+                "settings.notifications.test.store": {
+                    "uri": "settings/notifications/{notification}/test",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "notification"
+                    ]
+                },
+                "settings.notifications.toggle.update": {
+                    "uri": "settings/notifications/{notification}/toggle",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "notification"
+                    ]
+                },
+                "settings.notifications.destroy": {
+                    "uri": "settings/notifications/{notification}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "notification"
+                    ]
+                },
+                "settings.notifications.log.index": {
+                    "uri": "settings/notifications/{notification}/logs",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "notification"
+                    ]
+                },
+                "settings.user.index": {
+                    "uri": "settings/users",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.user.create": {
+                    "uri": "settings/users/create",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.user.store": {
+                    "uri": "settings/users",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.user.show": {
+                    "uri": "settings/users/{user}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "user"
+                    ]
+                },
+                "settings.user.update": {
+                    "uri": "settings/users/{user}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "user"
+                    ]
+                },
+                "settings.user.destroy": {
+                    "uri": "settings/users/{user}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "user"
+                    ]
+                },
+                "settings.personalize.index": {
+                    "uri": "settings/personalize",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.personalize.relationship.index": {
+                    "uri": "settings/personalize/relationships",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.personalize.relationship.grouptype.store": {
+                    "uri": "settings/personalize/relationships",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.personalize.relationship.grouptype.update": {
+                    "uri": "settings/personalize/relationships/{groupType}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "groupType"
+                    ]
+                },
+                "settings.personalize.relationship.grouptype.destroy": {
+                    "uri": "settings/personalize/relationships/{groupType}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "groupType"
+                    ]
+                },
+                "settings.personalize.relationship.type.store": {
+                    "uri": "settings/personalize/relationships/{groupType}/types",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "groupType"
+                    ]
+                },
+                "settings.personalize.relationship.type.update": {
+                    "uri": "settings/personalize/relationships/{groupType}/types/{type}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "groupType",
+                        "type"
+                    ]
+                },
+                "settings.personalize.relationship.type.destroy": {
+                    "uri": "settings/personalize/relationships/{groupType}/types/{type}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "groupType",
+                        "type"
+                    ]
+                },
+                "settings.personalize.call_reasons.index": {
+                    "uri": "settings/personalize/callReasonTypes",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.personalize.call_reasons.type.store": {
+                    "uri": "settings/personalize/callReasonTypes",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.personalize.call_reasons.type.update": {
+                    "uri": "settings/personalize/callReasonTypes/{callReasonType}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "callReasonType"
+                    ]
+                },
+                "settings.personalize.call_reasons.type.destroy": {
+                    "uri": "settings/personalize/callReasonTypes/{callReasonType}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "callReasonType"
+                    ]
+                },
+                "settings.personalize.call_reasons.store": {
+                    "uri": "settings/personalize/callReasonTypes/{callReasonType}/reasons",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "callReasonType"
+                    ]
+                },
+                "settings.personalize.call_reasons.update": {
+                    "uri": "settings/personalize/callReasonTypes/{callReasonType}/reasons/{reason}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "callReasonType",
+                        "reason"
+                    ]
+                },
+                "settings.personalize.call_reasons.destroy": {
+                    "uri": "settings/personalize/callReasonTypes/{callReasonType}/reasons/{reason}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "callReasonType",
+                        "reason"
+                    ]
+                },
+                "settings.personalize.gift_occasions.index": {
+                    "uri": "settings/personalize/giftOccasions",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.personalize.gift_occasions.store": {
+                    "uri": "settings/personalize/giftOccasions",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.personalize.gift_occasions.update": {
+                    "uri": "settings/personalize/giftOccasions/{giftOccasion}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "giftOccasion"
+                    ]
+                },
+                "settings.personalize.gift_occasions.destroy": {
+                    "uri": "settings/personalize/giftOccasions/{giftOccasion}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "giftOccasion"
+                    ]
+                },
+                "settings.personalize.gift_occasions.order.update": {
+                    "uri": "settings/personalize/giftOccasions/{giftOccasion}/position",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "giftOccasion"
+                    ]
+                },
+                "settings.personalize.gift_states.index": {
+                    "uri": "settings/personalize/giftStates",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.personalize.gift_states.store": {
+                    "uri": "settings/personalize/giftStates",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.personalize.gift_states.update": {
+                    "uri": "settings/personalize/giftStates/{giftState}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "giftState"
+                    ]
+                },
+                "settings.personalize.gift_states.destroy": {
+                    "uri": "settings/personalize/giftStates/{giftState}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "giftState"
+                    ]
+                },
+                "settings.personalize.gift_states.order.update": {
+                    "uri": "settings/personalize/giftStates/{giftState}/position",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "giftState"
+                    ]
+                },
+                "settings.personalize.post_templates.index": {
+                    "uri": "settings/personalize/postTemplates",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.personalize.post_templates.store": {
+                    "uri": "settings/personalize/postTemplates",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.personalize.post_templates.update": {
+                    "uri": "settings/personalize/postTemplates/{postTemplate}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "postTemplate"
+                    ]
+                },
+                "settings.personalize.post_templates.destroy": {
+                    "uri": "settings/personalize/postTemplates/{postTemplate}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "postTemplate"
+                    ]
+                },
+                "settings.personalize.post_templates.order.update": {
+                    "uri": "settings/personalize/postTemplates/{postTemplate}/position",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "postTemplate"
+                    ]
+                },
+                "settings.personalize.post_templates.section.store": {
+                    "uri": "settings/personalize/postTemplates/{postTemplate}/sections",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "postTemplate"
+                    ]
+                },
+                "settings.personalize.post_templates.section.update": {
+                    "uri": "settings/personalize/postTemplates/{postTemplate}/sections/{section}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "postTemplate",
+                        "section"
+                    ]
+                },
+                "settings.personalize.post_templates.section.destroy": {
+                    "uri": "settings/personalize/postTemplates/{postTemplate}/sections/{section}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "postTemplate",
+                        "section"
+                    ]
+                },
+                "settings.personalize.post_templates.section.order.update": {
+                    "uri": "settings/personalize/postTemplates/{postTemplate}/sections/{section}/position",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "postTemplate",
+                        "section"
+                    ]
+                },
+                "settings.personalize.group_types.index": {
+                    "uri": "settings/personalize/groupTypes",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.personalize.group_types.store": {
+                    "uri": "settings/personalize/groupTypes",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.personalize.group_types.update": {
+                    "uri": "settings/personalize/groupTypes/{type}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "type"
+                    ]
+                },
+                "settings.personalize.group_types.destroy": {
+                    "uri": "settings/personalize/groupTypes/{type}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "type"
+                    ]
+                },
+                "settings.personalize.group_types.order.update": {
+                    "uri": "settings/personalize/groupTypes/{type}/position",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "type"
+                    ]
+                },
+                "settings.personalize.group_types.roles.store": {
+                    "uri": "settings/personalize/groupTypes/{type}/groupTypeRoles",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "type"
+                    ]
+                },
+                "settings.personalize.group_types.roles.update": {
+                    "uri": "settings/personalize/groupTypes/{type}/groupTypeRoles/{role}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "type",
+                        "role"
+                    ]
+                },
+                "settings.personalize.group_types.roles.destroy": {
+                    "uri": "settings/personalize/groupTypes/{type}/groupTypeRoles/{role}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "type",
+                        "role"
+                    ]
+                },
+                "settings.personalize.group_types.roles.order.update": {
+                    "uri": "settings/personalize/groupTypes/{type}/groupTypeRoles/{role}/position",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "type",
+                        "role"
+                    ]
+                },
+                "settings.personalize.gender.index": {
+                    "uri": "settings/personalize/genders",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.personalize.gender.store": {
+                    "uri": "settings/personalize/genders",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.personalize.gender.update": {
+                    "uri": "settings/personalize/genders/{gender}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "gender"
+                    ]
+                },
+                "settings.personalize.gender.destroy": {
+                    "uri": "settings/personalize/genders/{gender}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "gender"
+                    ]
+                },
+                "settings.personalize.pronoun.index": {
+                    "uri": "settings/personalize/pronouns",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.personalize.pronoun.store": {
+                    "uri": "settings/personalize/pronouns",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.personalize.pronoun.update": {
+                    "uri": "settings/personalize/pronouns/{pronoun}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "pronoun"
+                    ]
+                },
+                "settings.personalize.pronoun.destroy": {
+                    "uri": "settings/personalize/pronouns/{pronoun}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "pronoun"
+                    ]
+                },
+                "settings.personalize.address_type.index": {
+                    "uri": "settings/personalize/addressTypes",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.personalize.address_type.store": {
+                    "uri": "settings/personalize/addressTypes",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.personalize.address_type.update": {
+                    "uri": "settings/personalize/addressTypes/{addressType}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "addressType"
+                    ]
+                },
+                "settings.personalize.address_type.destroy": {
+                    "uri": "settings/personalize/addressTypes/{addressType}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "addressType"
+                    ]
+                },
+                "settings.personalize.pet_category.index": {
+                    "uri": "settings/personalize/petCategories",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.personalize.pet_category.store": {
+                    "uri": "settings/personalize/petCategories",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.personalize.pet_category.update": {
+                    "uri": "settings/personalize/petCategories/{petCategory}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "petCategory"
+                    ]
+                },
+                "settings.personalize.pet_category.destroy": {
+                    "uri": "settings/personalize/petCategories/{petCategory}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "petCategory"
+                    ]
+                },
+                "settings.personalize.contact_information_type.index": {
+                    "uri": "settings/personalize/contactInformationType",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.personalize.contact_information_type.store": {
+                    "uri": "settings/personalize/contactInformationType",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.personalize.contact_information_type.update": {
+                    "uri": "settings/personalize/contactInformationType/{type}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "type"
+                    ]
+                },
+                "settings.personalize.contact_information_type.destroy": {
+                    "uri": "settings/personalize/contactInformationType/{type}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "type"
+                    ]
+                },
+                "settings.personalize.template.index": {
+                    "uri": "settings/personalize/templates",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.personalize.template.store": {
+                    "uri": "settings/personalize/templates",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.personalize.template.update": {
+                    "uri": "settings/personalize/templates/{template}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "template"
+                    ]
+                },
+                "settings.personalize.template.destroy": {
+                    "uri": "settings/personalize/templates/{template}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "template"
+                    ]
+                },
+                "settings.personalize.template.show": {
+                    "uri": "settings/personalize/templates/{template}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "template"
+                    ]
+                },
+                "settings.personalize.template.template_page.store": {
+                    "uri": "settings/personalize/templates/{template}",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "template"
+                    ]
+                },
+                "settings.personalize.template.template_page.update": {
+                    "uri": "settings/personalize/templates/{template}/template_pages/{page}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "template",
+                        "page"
+                    ]
+                },
+                "settings.personalize.template.template_page.destroy": {
+                    "uri": "settings/personalize/templates/{template}/template_pages/{page}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "template",
+                        "page"
+                    ]
+                },
+                "settings.personalize.template.template_page.show": {
+                    "uri": "settings/personalize/templates/{template}/template_pages/{page}",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "parameters": [
+                        "template",
+                        "page"
+                    ]
+                },
+                "settings.personalize.template.template_page.order.update": {
+                    "uri": "settings/personalize/templates/{template}/template_pages/{page}/order",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "template",
+                        "page"
+                    ]
+                },
+                "settings.personalize.template.template_page.module.store": {
+                    "uri": "settings/personalize/templates/{template}/template_pages/{page}/modules",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "template",
+                        "page"
+                    ]
+                },
+                "settings.personalize.template.template_page.module.order.update": {
+                    "uri": "settings/personalize/templates/{template}/template_pages/{page}/modules/{module}/order",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "template",
+                        "page",
+                        "module"
+                    ]
+                },
+                "settings.personalize.template.template_page.module.destroy": {
+                    "uri": "settings/personalize/templates/{template}/template_pages/{page}/modules/{module}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "template",
+                        "page",
+                        "module"
+                    ]
+                },
+                "settings.personalize.module.index": {
+                    "uri": "settings/personalize/modules",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.personalize.module.store": {
+                    "uri": "settings/personalize/modules",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.personalize.module.update": {
+                    "uri": "settings/personalize/modules/{module}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "module"
+                    ]
+                },
+                "settings.personalize.module.destroy": {
+                    "uri": "settings/personalize/modules/{module}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "module"
+                    ]
+                },
+                "settings.personalize.currency.index": {
+                    "uri": "settings/personalize/currencies",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.personalize.currency.update": {
+                    "uri": "settings/personalize/currencies/{currency}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "currency"
+                    ]
+                },
+                "settings.personalize.currency.store": {
+                    "uri": "settings/personalize/currencies",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.personalize.currency.destroy": {
+                    "uri": "settings/personalize/currencies",
+                    "methods": [
+                        "DELETE"
+                    ]
+                },
+                "settings.personalize.religions.index": {
+                    "uri": "settings/personalize/religions",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.personalize.religions.store": {
+                    "uri": "settings/personalize/religions",
+                    "methods": [
+                        "POST"
+                    ]
+                },
+                "settings.personalize.religions.update": {
+                    "uri": "settings/personalize/religions/{religion}",
+                    "methods": [
+                        "PUT"
+                    ],
+                    "parameters": [
+                        "religion"
+                    ]
+                },
+                "settings.personalize.religions.destroy": {
+                    "uri": "settings/personalize/religions/{religion}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "religion"
+                    ]
+                },
+                "settings.personalize.religions.order.update": {
+                    "uri": "settings/personalize/religions/{religion}/position",
+                    "methods": [
+                        "POST"
+                    ],
+                    "parameters": [
+                        "religion"
+                    ]
+                },
+                "settings.storage.index": {
+                    "uri": "settings/storage",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.cancel.index": {
+                    "uri": "settings/cancel",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "settings.cancel.destroy": {
+                    "uri": "settings/cancel",
+                    "methods": [
+                        "PUT"
+                    ]
+                },
+                "currencies.index": {
+                    "uri": "currencies",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ]
+                },
+                "provider.delete": {
+                    "uri": "auth/{driver}",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "parameters": [
+                        "driver"
+                    ]
+                }
+            },
+            "location": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/contacts"
+        },
+        "sentry": {
+            "dsn": null,
+            "tunnel": "/sentry/tunnel",
+            "release": "v5.0.0-beta.5",
+            "environment": null,
+            "sendDefaultPii": false,
+            "tracesSampleRate": 0
+        },
+        "layoutData": {
+            "user": {
+                "id": "019b654d-ff90-72bd-b68a-09f1e78562e3",
+                "name": "维冬 葛"
+            },
+            "vault": {
+                "id": "019b654f-050b-7166-bc32-39dfe1b30db7",
+                "name": "DeepDiary",
+                "permission": {
+                    "at_least_editor": true,
+                    "at_least_manager": true
+                },
+                "visibility": {
+                    "show_group_tab": true,
+                    "show_tasks_tab": true,
+                    "show_files_tab": true,
+                    "show_journal_tab": true,
+                    "show_companies_tab": true,
+                    "show_reports_tab": true,
+                    "show_calendar_tab": true
+                },
+                "url": {
+                    "dashboard": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7",
+                    "contacts": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/contacts",
+                    "calendar": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/calendar",
+                    "journals": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/journals",
+                    "groups": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/groups",
+                    "companies": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/companies",
+                    "tasks": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/tasks",
+                    "files": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/files",
+                    "reports": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/reports",
+                    "settings": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/settings",
+                    "search": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/search",
+                    "get_most_consulted_contacts": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/search/user/contact/mostConsulted",
+                    "search_contacts_only": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/search/user/contacts"
+                }
+            },
+            "url": {
+                "vaults": "http://localhost:8080/vaults",
+                "settings": "http://localhost:8080/settings",
+                "logout": "http://localhost:8080/logout"
+            }
+        },
+        "data": {
+            "contacts": [
+                {
+                    "id": "019b654f-0512-73ff-acf1-16267dedfbe2",
+                    "name": "维冬 葛",
+                    "avatar": {
+                        "type": "svg",
+                        "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 231 231\"><path d=\"M33.83,33.83a115.5,115.5,0,1,1,0,163.34,115.49,115.49,0,0,1,0-163.34Z\" style=\"fill:#00a58c;\"/><path d=\"m115.5 51.75a63.75 63.75 0 0 0-10.5 126.63v14.09a115.5 115.5 0 0 0-53.729 19.027 115.5 115.5 0 0 0 128.46 0 115.5 115.5 0 0 0-53.729-19.029v-14.084a63.75 63.75 0 0 0 53.25-62.881 63.75 63.75 0 0 0-63.65-63.75 63.75 63.75 0 0 0-0.09961 0z\" style=\"fill:#755227;\"/><path d=\"m141.75 195a114.79 114.79 0 0 1 38 16.5 115.53 115.53 0 0 1-128.46 0 114.79 114.79 0 0 1 38-16.5c0 10.76 11.75 19.48 26.25 19.48s26.25-8.72 26.25-19.48z\" style=\"fill:#fff;\"/><path d=\"m92.502 194.27v0.70391c0 4.3033 2.4373 8.2583 6.3807 11.183 4.2199 3.1204 10.106 5.0508 16.661 5.0508 6.548 0 12.434-1.9303 16.654-5.0508 3.9434-2.9245 6.388-6.8795 6.388-11.183v-0.67489c1.0768 0.21771 2.1463 0.44994 3.2158 0.69666h-7e-3c1.0695 0.24672 2.1318 0.50798 3.1867 0.791-0.27648 6.103-3.6524 11.553-8.9708 15.493-5.2821 3.9114-12.521 6.328-20.466 6.328-7.9449 0-15.184-2.4165-20.474-6.328-5.333-3.9477-8.7089-9.4194-8.9708-15.544 1.055-0.27577 2.1099-0.53702 3.1722-0.78376 1.0695-0.23947 2.1463-0.46443 3.2304-0.68213z\" style=\"fill:#000;\"/><path d=\"m41.835 75.131c-2.8674 12.582 1.2304 27.241 6.0238 39.031 0.25861 0.63658 0.51208 1.3075 0.79989 1.9683 0.71726 1.658 2.1184 3.9751 3.0038 3.9266 0.56895-0.0312 0.71637-1.5512 1.0228-3.1562 2.1988-19.097 8.8981-27.915 15.636-38.107 2.8783-4.0645 3.8616-7.2293 1.0644-9.9325-6.3236-3.5596-14.924-2.8574-21.367-0.67406-3.2312 1.4765-5.2427 3.4773-6.1842 6.9439zm125.65-8.5679c7.65-0.70616 19.714-0.1307 21.694 8.5679 1.455 6.4083 0.26915 17.747-1.0542 24.579-1.1961 5.3203-3.8066 14.231-7.8782 19.75-0.5565 0.44544-0.96888 0.13656-1.4159-1.1606-0.90692-3.0353-1.4298-7.8372-2.2556-10.727-3.4822-12.79-8.2195-21.875-14.429-29.94-5.5782-6.8415-4.2152-9.7207 5.3393-11.069z\" style=\"fill:#efefef;\"/><path d=\"m112.27 73.826c-18.585-7.5217-34.987-14.797-48.939 5.018-4.9752 7.083-3.7876 8.8056-4.9217 0.0749-1.637-12.476-4.7505-34.174 1.9259-45.194 7.6822-12.7 19.323-13.128 31.039-5.3818 10.796 7.7784 24.277 14.647 38.015 12.219 12.732-2.2576 15.835-7.7464 15.707-19.912-0.0215-2.6-0.0963-5.2106-0.2033-7.7999 13.631 3.9267 24.609 14.776 26.513 29.049 0.88804 6.6336 0.26749 12.722-1.9259 19.013-5.9702 17.108-30.119 20.896-45.74 16.841-3.9588-1.0378-7.6822-2.4181-11.47-3.9267z\" style=\"fill:none;\"/><path d=\"m86.851 100.39a4.94 4.94 0 1 0 4.9297 5 5 5 0 0 0-4.9297-5zm57.221 0a4.94 4.94 0 1 0 4.9394 4.9394 4.94 4.94 0 0 0-4.9394-4.9394z\" style=\"fill:#000;\"/><path d=\"m86.207 89.365c-25.504 0-21.503 6.8561-21.035 19.596 0.80177 18.121 17.763 16.514 21.201 16.639 14.758-0.041 20.518-8.227 22.951-22.932 1.8166-10.731-9.251-13.174-23.117-13.303zm58.598 0c-13.866 0.1284-24.936 2.5717-23.119 13.303 2.4332 14.705 8.1936 22.891 22.951 22.932 3.4383-0.125 20.399 1.4828 21.201-16.639 0-18.965-0.47958-19.596-21.033-19.596z\" style=\"fill:#000;\"/><path d=\"m169.87 90.255a0.51 0.51 0 0 0-0.43991-0.52 167.64 167.64 0 0 0-22.6-1.6801c-12 0-27.47 3.7601-30.17 3.7601h-2.4c-1.2499 0-5.29-0.80996-10.45-1.6801a124.35 124.35 0 0 0-19.72-2.08 166.18 166.18 0 0 0-19.31 1.24c-1.56 0.17999-2.69 0.35009-3.2899 0.44009a0.51 0.51 0 0 0-0.44007 0.52l-0.091 6.4501a0.57 0.57 0 0 0 0.33012 0.52l0.73994 0.23992c1.08 0.41992 1.0001 19.85 6.78 24.71 3.4401 2.8599 6.51 4.4899 19.42 4.4899 7.4699 0 12.17-1.9999 16.63-8 3.21-4.32 6.0999-14.55 6.0999-14.55 0.82006-4.07 3.7702-4.52 4.43-4.5801h0.12068c0.11078 0 3.66 0.0593 4.57 4.5801 0 0 2.8599 10.22 6.0699 14.54 4.4601 5.9999 9.1601 8 16.63 8 12.91 0 16-1.63 19.42-4.4901 5.7898-4.86 5.6998-24.29 6.78-24.71l0.73994-0.23993a0.57 0.57 0 0 0 0.32996-0.52l-0.12068-6.4501zm-65 23c-1.9101 4.5-6.8 10.29-13.7 10.64-20.7 0.99985-21.65-4.7401-23-9.3201a31.45 31.45 0 0 1-1.2099-13.18c0.53997-4.5799 1.7-7.2699 3.7801-8.6201a9.3 9.3 0 0 1 4.3499-1.51 85.07 85.07 0 0 1 11.4-0.52 59.23 59.23 0 0 1 9.2099 0.69999c7.37 1.2 12.35 3.7001 12.35 6.1601a46.12 46.12 0 0 1-3.23 15.64zm58 1.3201c-1.34 4.5799-2.29 10.36-23 9.3201-6.91-0.3501-11.81-6.1401-13.71-10.64a46.35 46.35 0 0 1-3.22-15.64c0-3.39 9.43-6.8599 21.56-6.8599 12.13 0 14 0.89996 15.75 1.9999 2.08 1.3502 3.2398 4 3.77 8.6201a31.23 31.23 0 0 1-1.1601 13.17z\" style=\"fill:#57FFFD;\"/><path d=\"m100.19 152.09c2.8726 4.0616 9.8095 4.7232 15.119-0.45432 5.0656 4.5134 11.167 5.6898 15.495 0.31458\" style=\"fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:5.8949;stroke:#222;\"/><path d=\"m109.67 135.53c-0.9758 0.0743-2.05 0.45327-3.1485 0.99414-4.3235 2.1399-7.3862 4.2557-10.639 7.1406-0.6251 0.5715 0.1168 0.77785 1.4238 0.87304 5.6967 0.0536 14.384 0.41404 15.098-0.875 1.9251-2.0788 1.7969-5.3303-0.1816-7.3008-0.701-0.67533-1.5769-0.90632-2.5527-0.83203zm11.656 0c-0.9758-0.0743-1.8517 0.1567-2.5527 0.83203-1.9785 1.9705-2.1067 5.222-0.1817 7.3008 0.7142 1.289 9.401 0.9286 15.098 0.875 1.307-0.0952 2.0489-0.30154 1.4238-0.87304-3.2524-2.8849-6.3151-5.0007-10.639-7.1406-1.0985-0.54087-2.1727-0.91985-3.1485-0.99414z\" style=\"fill:#fff;\"/></svg>"
+                    },
+                    "url": {
+                        "show": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/contacts/019b654f-0512-73ff-acf1-16267dedfbe2"
+                    }
+                }
+            ],
+            "labels": [],
+            "current_label": null,
+            "user_contact_sort_order": "last_updated",
+            "contact_sort_orders": [
+                {
+                    "id": "last_updated",
+                    "name": "By last updated"
+                },
+                {
+                    "id": "asc",
+                    "name": "From A to Z"
+                },
+                {
+                    "id": "desc",
+                    "name": "From Z to A"
+                }
+            ],
+            "url": {
+                "contact": {
+                    "index": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/contacts",
+                    "create": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/contacts/create"
+                },
+                "sort": {
+                    "update": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/contacts/sort"
+                }
+            }
+        },
+        "paginator": {
+            "count": 1,
+            "currentPage": 1,
+            "firstItem": 1,
+            "firstPageUrl": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/contacts?page=1",
+            "hasMorePages": false,
+            "lastItem": 1,
+            "lastPage": 1,
+            "lastPageUrl": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/contacts?page=1",
+            "links": [
+                {
+                    "url": null,
+                    "label": "❮ Previous",
+                    "active": false
+                },
+                {
+                    "url": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/contacts?page=1",
+                    "label": "1",
+                    "active": true
+                },
+                {
+                    "url": null,
+                    "label": "Next ❯",
+                    "active": false
+                }
+            ],
+            "nextPageUrl": null,
+            "onFirstPage": true,
+            "path": "http://localhost:8080/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/contacts",
+            "perPage": 25,
+            "previousPageUrl": null,
+            "total": 1
+        }
+    },
+    "url": "/vaults/019b654f-050b-7166-bc32-39dfe1b30db7/contacts",
+    "version": "acee3fd1bd5f605440b5b5ff8a889b53",
+    "clearHistory": false,
+    "encryptHistory": false
+}
