@@ -12,6 +12,10 @@ from .contact_manager import ContactManager
 from .quick_fact_manager import QuickFactManager
 from .contact_information_manager import ContactInformationManager
 from .address_manager import AddressManager
+from .calls_manager import CallsManager
+from .notes_manager import NotesManager
+from .reminders_manager import RemindersManager
+from .contact_information_extractor import ContactInformationExtractor
 
 
 class MonicaClient:
@@ -43,6 +47,11 @@ class MonicaClient:
         self.quick_facts = QuickFactManager(self)
         self.contact_information = ContactInformationManager(self)
         self.addresses = AddressManager(self)
+        self.calls = CallsManager(self)
+        self.notes = NotesManager(self)
+        self.reminders = RemindersManager(self)
+        # 联系人信息提取器（统一从页面获取所有信息）
+        self.contact_info = ContactInformationExtractor(self)
     
     async def __aenter__(self):
         """异步上下文管理器入口"""
