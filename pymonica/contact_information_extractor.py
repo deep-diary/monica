@@ -3,8 +3,7 @@
 负责从联系人详情页面（/tabs/information）提取所有信息
 """
 
-from typing import Optional, Dict, Any, List
-
+import re
 from typing import Optional, Dict, Any, List
 
 
@@ -62,6 +61,116 @@ class ContactInformationExtractor:
         self._cached_contact_id = contact_id
         
         return contact_info
+    
+    def get_contact_id(self, contact_detail: Optional[Dict[str, Any]] = None) -> Optional[str]:
+        """
+        从联系人详情中提取联系人ID
+        
+        Args:
+            contact_detail: 联系人详情字典（如果为None，使用缓存的数据）
+        
+        Returns:
+            联系人ID，如果未找到则返回None
+        """
+        if contact_detail is None:
+            contact_detail = self._cached_data
+        
+        if not contact_detail:
+            return None
+        
+        # 尝试从多个位置提取ID
+        data = self._get_data_from_detail(contact_detail)
+        
+        # 方法1: 从 contact_name.url.edit 中提取
+        contact_name = data.get('contact_name', {})
+        if isinstance(contact_name, dict):
+            url = contact_name.get('url', {})
+            if isinstance(url, dict):
+                edit_url = url.get('edit', '')
+                if edit_url:
+                    # 从URL中提取contact_id: /vaults/{vault}/contacts/{contact_id}/edit
+                    match = re.search(r'/contacts/([^/]+)/edit', edit_url)
+                    if match:
+                        return match.group(1)
+        
+        # 方法2: 从其他URL中提取
+        url_obj = data.get('url', {})
+        if isinstance(url_obj, dict):
+            for url_key, url_value in url_obj.items():
+                if isinstance(url_value, str) and '/contacts/' in url_value:
+                    match = re.search(r'/contacts/([^/]+)', url_value)
+                    if match:
+                        return match.group(1)
+        
+        return None
+    
+    def get_contact_name(self, contact_detail: Optional[Dict[str, Any]] = None) -> Optional[str]:
+        """
+        从联系人详情中提取联系人名称
+        
+        Args:
+            contact_detail: 联系人详情字典（如果为None，使用缓存的数据）
+        
+        Returns:
+            联系人名称，如果未找到则返回None
+        """
+        if contact_detail is None:
+            contact_detail = self._cached_data
+        
+        if not contact_detail:
+            return None
+        
+        data = self._get_data_from_detail(contact_detail)
+        contact_name = data.get('contact_name', {})
+        
+        if isinstance(contact_name, dict):
+            name = contact_name.get('name')
+            if name:
+                return name
+        
+        return None
+    
+    async def get_all_information_as_json(self, vault_id: str, contact_id: str, 
+                                          use_cache: bool = True, 
+                                          indent: int = 2) -> Optional[str]:
+        """
+        获取所有联系人信息并以JSON格式返回
+        
+        Args:
+            vault_id: Vault ID（必填）
+            contact_id: 联系人 ID（必填）
+            use_cache: 是否使用缓存（默认 True）
+            indent: JSON缩进空格数（默认 2）
+        
+        Returns:
+            JSON格式的字符串，如果获取失败则返回None
+        """
+        import json
+        
+        # 获取完整信息
+        contact_detail = await self.get_full_information(vault_id, contact_id, use_cache)
+        if not contact_detail:
+            return None
+        
+        data = self._get_data_from_detail(contact_detail)
+        
+        # 构建所有信息的字典
+        all_info = {
+            "contact_id": self.get_contact_id(contact_detail) or contact_id,
+            "contact_name": self.get_contact_name(contact_detail),
+            "calls": await self.get_calls(vault_id, contact_id, use_cache=True),
+            "reminders": await self.get_reminders(vault_id, contact_id, use_cache=True),
+            "notes": await self.get_notes(vault_id, contact_id, use_cache=True),
+            "addresses": await self.get_addresses(vault_id, contact_id, use_cache=True),
+            "contact_information": await self.get_contact_information(vault_id, contact_id, use_cache=True),
+            "dates": await self.get_dates(vault_id, contact_id, use_cache=True),
+            "quick_facts": await self.get_quick_facts(vault_id, contact_id, use_cache=True),
+            "quick_facts_list": await self.get_quick_facts_list(vault_id, contact_id, use_cache=True),
+            "all_modules": await self.get_all_modules(vault_id, contact_id, use_cache=True),
+        }
+        
+        # 转换为JSON字符串
+        return json.dumps(all_info, ensure_ascii=False, indent=indent)
     
     def _get_data_from_detail(self, contact_detail: Dict[str, Any]) -> Dict[str, Any]:
         """

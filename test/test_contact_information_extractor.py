@@ -33,8 +33,11 @@ async def main():
             # 打印基本信息结构
             if 'props' in full_info and 'data' in full_info['props']:
                 data = full_info['props']['data']
-                print(f"  联系人 ID: {data.get('id', 'N/A')}")
-                print(f"  联系人名称: {data.get('first_name', '')} {data.get('last_name', '')}")
+                # 使用提取器的方法获取ID和名称
+                contact_id_extracted = client.contact_info.get_contact_id(full_info)
+                contact_name_extracted = client.contact_info.get_contact_name(full_info)
+                print(f"  联系人 ID: {contact_id_extracted or 'N/A'}")
+                print(f"  联系人名称: {contact_name_extracted or 'N/A'}")
                 if 'modules' in data:
                     print(f"  模块数量: {len(data['modules'])}")
                     module_types = [m.get('type', 'unknown') for m in data['modules'] if isinstance(m, dict)]
@@ -291,6 +294,18 @@ async def main():
             print(f"✓ 成功使用通用方法获取 calls 模块: {len(custom_module) if isinstance(custom_module, list) else 'N/A'} 条记录")
         else:
             print("  未找到模块数据")
+        
+        # 测试 13: 获取所有信息并以JSON格式输出
+        print("\n" + "=" * 50)
+        print("测试 13: 获取所有信息并以JSON格式输出")
+        print("=" * 50)
+        
+        all_info_json = await client.contact_info.get_all_information_as_json(vault_id, contact_id)
+        if all_info_json:
+            print("✓ 成功获取所有信息（JSON格式）:")
+            print(all_info_json)
+        else:
+            print("✗ 获取失败")
         
         print("\n" + "=" * 50)
         print("所有测试完成！")
