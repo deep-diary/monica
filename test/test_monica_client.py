@@ -17,7 +17,7 @@ async def main():
     # 配置信息
     # monica_token = "DcmeEW7FLD4ly8EkhOI9ZBjfKXxre3eTq5m6hTJq1ef2f025"  # mac
     monica_token = "8m3ihVnLHt8B7QeuWn7GJdDCKEqwNoe7hVKtSugZ576f1c46"  # win
-    monica_base_url = "http://mem.deep-diary.com"
+    monica_base_url = "http://192.168.31.25:8080"
     vault_id = "019b6548-e77c-73ad-8431-846334b79395"  # DeepDiary vault
     
     # 创建客户端实例
