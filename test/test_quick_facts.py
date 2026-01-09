@@ -16,7 +16,7 @@ from pymonica import MonicaClient
 async def main():
     # 配置信息
     monica_token = "8m3ihVnLHt8B7QeuWn7GJdDCKEqwNoe7hVKtSugZ576f1c46"
-    monica_base_url = "http://192.168.31.25:8080"
+    monica_base_url = "http://mem.deep-diary.com"
     vault_id = "019b83ae-f4bc-7360-bab1-84e226a00e43"  # friends vault
     
     # 创建客户端实例

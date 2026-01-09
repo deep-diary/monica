@@ -10,6 +10,8 @@ from html import unescape
 
 from .contact_manager import ContactManager
 from .quick_fact_manager import QuickFactManager
+from .contact_information_manager import ContactInformationManager
+from .address_manager import AddressManager
 
 
 class MonicaClient:
@@ -39,6 +41,8 @@ class MonicaClient:
         # 初始化各个管理器
         self.contacts = ContactManager(self)
         self.quick_facts = QuickFactManager(self)
+        self.contact_information = ContactInformationManager(self)
+        self.addresses = AddressManager(self)
     
     async def __aenter__(self):
         """异步上下文管理器入口"""

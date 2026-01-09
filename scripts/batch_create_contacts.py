@@ -105,7 +105,7 @@ async def main():
     # 配置信息
     # 可以从环境变量或配置文件读取
     monica_token = os.getenv("MONICA_TOKEN", "8m3ihVnLHt8B7QeuWn7GJdDCKEqwNoe7hVKtSugZ576f1c46")  # 默认值，建议使用环境变量
-    monica_base_url = os.getenv("MONICA_BASE_URL", "http://192.168.31.25:8080")  # 默认值
+    monica_base_url = os.getenv("MONICA_BASE_URL", "http://mem.deep-diary.com")  # 默认值
     # vault_id = "019b83ae-f4bc-7360-bab1-84e226a00e43"  # friends vault
     vault_id = "019b83b0-bd96-700c-bb9a-9bd74f99202f" # colleagues vault
     
