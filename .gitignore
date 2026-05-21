@@ -133,5 +133,6 @@ dmypy.json
 # Project specific
 *.log
 *.tmp
+exports/
 scripts/friends.csv
 scripts/colleagues.csv

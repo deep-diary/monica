@@ -130,6 +130,41 @@ class ContactInformationExtractor:
         
         return None
     
+    async def get_all_information_as_dict(self, vault_id: str, contact_id: str,
+                                            use_cache: bool = True) -> Optional[Dict[str, Any]]:
+        """
+        获取所有联系人信息并以字典格式返回
+
+        Args:
+            vault_id: Vault ID（必填）
+            contact_id: 联系人 ID（必填）
+            use_cache: 是否使用缓存（默认 True）
+
+        Returns:
+            包含所有联系人信息的字典，如果获取失败则返回 None
+        """
+        contact_detail = await self.get_full_information(vault_id, contact_id, use_cache)
+        if not contact_detail:
+            return None
+
+        return {
+            "contact_id": self.get_contact_id(contact_detail) or contact_id,
+            "contact_name": self.get_contact_name(contact_detail),
+            "calls": await self.get_calls(vault_id, contact_id, use_cache=True),
+            "reminders": await self.get_reminders(vault_id, contact_id, use_cache=True),
+            "notes": await self.get_notes(vault_id, contact_id, use_cache=True),
+            "addresses": await self.get_addresses(vault_id, contact_id, use_cache=True),
+            "contact_information": await self.get_contact_information(
+                vault_id, contact_id, use_cache=True
+            ),
+            "dates": await self.get_dates(vault_id, contact_id, use_cache=True),
+            "quick_facts": await self.get_quick_facts(vault_id, contact_id, use_cache=True),
+            "quick_facts_list": await self.get_quick_facts_list(
+                vault_id, contact_id, use_cache=True
+            ),
+            "all_modules": await self.get_all_modules(vault_id, contact_id, use_cache=True),
+        }
+
     async def get_all_information_as_json(self, vault_id: str, contact_id: str, 
                                           use_cache: bool = True, 
                                           indent: int = 2) -> Optional[str]:
@@ -146,30 +181,13 @@ class ContactInformationExtractor:
             JSON格式的字符串，如果获取失败则返回None
         """
         import json
-        
-        # 获取完整信息
-        contact_detail = await self.get_full_information(vault_id, contact_id, use_cache)
-        if not contact_detail:
+
+        all_info = await self.get_all_information_as_dict(
+            vault_id, contact_id, use_cache=use_cache
+        )
+        if not all_info:
             return None
-        
-        data = self._get_data_from_detail(contact_detail)
-        
-        # 构建所有信息的字典
-        all_info = {
-            "contact_id": self.get_contact_id(contact_detail) or contact_id,
-            "contact_name": self.get_contact_name(contact_detail),
-            "calls": await self.get_calls(vault_id, contact_id, use_cache=True),
-            "reminders": await self.get_reminders(vault_id, contact_id, use_cache=True),
-            "notes": await self.get_notes(vault_id, contact_id, use_cache=True),
-            "addresses": await self.get_addresses(vault_id, contact_id, use_cache=True),
-            "contact_information": await self.get_contact_information(vault_id, contact_id, use_cache=True),
-            "dates": await self.get_dates(vault_id, contact_id, use_cache=True),
-            "quick_facts": await self.get_quick_facts(vault_id, contact_id, use_cache=True),
-            "quick_facts_list": await self.get_quick_facts_list(vault_id, contact_id, use_cache=True),
-            "all_modules": await self.get_all_modules(vault_id, contact_id, use_cache=True),
-        }
-        
-        # 转换为JSON字符串
+
         return json.dumps(all_info, ensure_ascii=False, indent=indent)
     
     def _get_data_from_detail(self, contact_detail: Dict[str, Any]) -> Dict[str, Any]:
